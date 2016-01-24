@@ -35,6 +35,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		// setContentView(R.layout.activity_main1);
+		
+		// sp组长
 
 		final MyListView listView = (MyListView) findViewById(R.id.my_listview);
 		createTestData = createTestData();
