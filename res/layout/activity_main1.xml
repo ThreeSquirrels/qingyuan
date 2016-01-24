@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content" >
 
-    <com.example.listviewimpl.view.CopyOfMyListView
+    <ListView
         android:id="@+id/my_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#000" >
-    </com.example.listviewimpl.view.CopyOfMyListView>
+    </ListView>
 
 </RelativeLayout>

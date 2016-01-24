@@ -11,17 +11,17 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.listviewimpl.view.MyListView;
-import com.example.listviewimpl.view.MyListView.OnScrollListener;
-
-public class MainActivity extends Activity {
+public class MainActivity1 extends Activity {
 
 	// ===========================================================
 	// Methods for/from SuperClass/Interfaces
@@ -33,10 +33,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main1);
 		// setContentView(R.layout.activity_main1);
 
-		final MyListView listView = (MyListView) findViewById(R.id.my_listview);
+		final ListView listView = (ListView) findViewById(R.id.my_listview);
 		createTestData = createTestData();
 		final CustomAdapter customAdapter = new CustomAdapter(this, createTestData);
 		final CustomAdapter1 customAdapter1 = new CustomAdapter1();
@@ -63,27 +63,34 @@ public class MainActivity extends Activity {
 			}
 		});
 		handler = new Handler();
-		handler.postDelayed(new Runnable() {
-			int count = 0;
+		// handler.postDelayed(new Runnable() {
+		// int count = 0;
+		//
+		// @Override
+		// public void run() {
+		// count++;
+		// if (count < 30) {
+		// createTestData.addAll(createTestData());
+		// customAdapter.notifyDataSetChanged();
+		// handler.postDelayed(this, 2000);
+		// }
+		// }
+		// }, 2000);
+
+		listView.setOnScrollListener(new OnScrollListener() {
 
 			@Override
-			public void run() {
-				count++;
-				listView.setSelection(299);
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
 			}
-		}, 2000);
-		
-		listView.setOnScrollListener(new OnScrollListener() {
-			
+
 			@Override
-			public void onScrollStateChanged(MyListView view, int scrollState) {
-			}
-			
-			@Override
-			public void onScroll(MyListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+				System.out.println(firstVisibleItem);
+				System.out.println(visibleItemCount + "===");
+				System.out.println(totalItemCount + "----");
 			}
 		});
-		
+
 	}
 
 	// ===========================================================
@@ -139,7 +146,7 @@ public class MainActivity extends Activity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			if (position % 4 == 1) {
-				TextView textView = new TextView(MainActivity.this);
+				TextView textView = new TextView(MainActivity1.this);
 				textView.setText("ooooxxxx");
 				textView.setBackgroundColor(Color.GREEN);
 				return textView;
@@ -183,7 +190,7 @@ public class MainActivity extends Activity {
 			// }
 
 			if (convertView == null) {
-				TextView textView = new TextView(MainActivity.this);
+				TextView textView = new TextView(MainActivity1.this);
 				textView.setText("ooooxxxx");
 				textView.setBackgroundColor(Color.GREEN);
 				convertView = textView;

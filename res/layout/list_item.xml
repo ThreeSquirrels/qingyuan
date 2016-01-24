@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dip"
+        android:background="@drawable/belong_select"
         android:layout_toRightOf="@id/iv_photo"
         android:textSize="16dip" />
 

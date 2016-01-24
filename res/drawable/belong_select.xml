@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/green" android:state_pressed="true"/>
+    <item android:drawable="@drawable/trans"/>
+
+</selector> <!-- 个人主页选择分类默认按下的背景 -->

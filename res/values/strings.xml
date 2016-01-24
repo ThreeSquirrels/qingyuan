@@ -4,5 +4,8 @@
     <string name="app_name">ListViewImpl</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <drawable name="green">#00ff00</drawable>
+    <drawable name="trans">#00000000</drawable>
 
 </resources>
